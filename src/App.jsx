@@ -1,7 +1,10 @@
 
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import './App.css';
 import Produto from './produto';
+import UserContext from './UserContext'
+
+import {GlobalContext, GlobalStorage} from './GlobalContext'
 
 function App() {
   //useSate
@@ -33,6 +36,10 @@ function App() {
    }, [])
 
 
+   //usecontext
+
+   const global = useContext(GlobalContext);
+   
 
   return (
     <div className="App">
@@ -71,6 +78,19 @@ function App() {
            </div>}
        </div>
 
+       <hr />
+
+       <UserContext.Provider>
+         <div>
+              <Produto/>
+         </div>
+       </UserContext.Provider>
+
+      <GlobalStorage>
+        <div>
+
+        </div>
+      </GlobalStorage>
        
     </div>
   );

@@ -1,9 +1,14 @@
+import { useContext } from "react";
 import { useEffect, useState } from "react/cjs/react.development"
 import Item from "./item";
+import UserContext from "./UserContext";
+
 
 export default function Produto(){
     const [dados, setDados] = useState(null);
     const [carregando, setCarrengando]= useState(null);
+
+    const info = useContext(UserContext);
 
     async function handleClick(event){
         setCarrengando(true)

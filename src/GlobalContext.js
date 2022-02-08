@@ -1,17 +1,29 @@
+import { createContext, useEffect, useState } from "react";
 
-import { createContext, useState } from "react";
+//nome do contexto
+export const GlobalContext = createContext();
 
-
-//criar o contexto
-export const GlobalContext = createContext;
-
-
-//cria o provider que passa as infos, ele é chamdo no componentes
+//função com os estados compartilhado, encapsula corpo do app
 export const GlobalStorage = ({children}) =>{
-    const [contar, setContar] = useState(0)
 
-    //passar os valores 
-    return (
-    <GlobalContext.Provider value={{nome: 'sara', contar, setContar}}>{children}</GlobalContext.Provider>
-    )
+    const [dados, setDados] = useState(null);   
+     
+
+    //dados da api com efeito
+    useEffect(() =>{
+        fetch('https://ranekapi.origamid.dev/json/api/produto/')
+        .then((response) => response.json())
+        .then((json) => setDados(json));
+    }, []);
+
+
+    function limparDados(){
+        setDados(null);
+    }
+
+    return(
+        <GlobalContext.Provider value={{dados, limparDados}}>
+            {children}
+        </GlobalContext.Provider>
+    );
 }

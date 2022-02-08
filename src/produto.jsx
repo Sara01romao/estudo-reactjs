@@ -5,7 +5,7 @@ import { GlobalContext} from "./GlobalContext"
 export default function Produto(){
     const {dados, limparDados} = useContext(GlobalContext);
 
-   console.log(dados)
+  /*  console.log(dados) */
 
    if(dados === null) return null;
 

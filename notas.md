@@ -13,3 +13,11 @@ São funções que deixa controlar os estados e ciclo de vida dos componentes
 Callback -> sempre tem o valor anterior como 1º argumento o retorno um novo valor
 
 
+
+CRIAR HOOK:
+ Deve começar com a palabra 'use'
+
+
+ REGRAS:
+Não utilize os hooks dentro de funções, loops ou condicionais
+Utilizar só em componentes e custom hooks

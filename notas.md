@@ -21,3 +21,8 @@ CRIAR HOOK:
  REGRAS:
 Não utilize os hooks dentro de funções, loops ou condicionais
 Utilizar só em componentes e custom hooks
+
+/*****************************************************************************************/
+
+
+

@@ -3,6 +3,7 @@ import Produto from './produto';
 import './App.css';
 import { GlobalStorage } from './GlobalContext';
 import Item from './item';
+import Formulario from './formulario';
 
 
 
@@ -15,6 +16,8 @@ function App() {
       <Produto/>
       <hr />
       <Item/>
+      <hr />
+      <Formulario/>
     </GlobalStorage>
    
   );

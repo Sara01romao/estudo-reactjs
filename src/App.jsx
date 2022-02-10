@@ -18,9 +18,9 @@ function App() {
       <hr />
       <Item/>
       <hr />
-     {/*  <Formulario/> */}
+      <Formulario/>
       <hr />
-      <ExerFormulario/>
+      {/* <ExerFormulario/> */}
     </GlobalStorage>
    
   );

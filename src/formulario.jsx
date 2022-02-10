@@ -3,6 +3,7 @@ import {useState} from 'react'
 
 export default function Formulario(){
         const [nome, setNome] = useState('');
+        const [textarea, setTextarea] = useState('');
 
         function handleSubmit(event){
             event.preventDefault();
@@ -22,29 +23,43 @@ export default function Formulario(){
 
 
     return(
-        //evento do button direto no form
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="nome">Nome</label>
 
-            <input 
-                type="text"
-                value={nome}
-                onChange={(event) => setNome(event.target.value)}
-             />
+        <div>
 
-            <label htmlFor="email">Email</label>
+       
+            //evento do button direto no form
+            <form onSubmit={handleSubmit}>
+                <label htmlFor="nome">Nome</label>
 
-            <input 
-                id='email'
-                type="email"
-                value={form.email}
-                onChange={handleChange}
-            />
+                <input 
+                    type="text"
+                    value={nome}
+                    onChange={(event) => setNome(event.target.value)}
+                />
+
+                <label htmlFor="email">Email</label>
+
+                <input 
+                    id='email'
+                    type="email"
+                    value={form.email}
+                    onChange={handleChange}
+                />
 
 
 
-           <button>Enviar</button>
-        </form>
+                <button>Enviar</button>
+            </form>
+
+            <h3>Text area</h3>
+            <textarea 
+                id="textarea"
+                value={textarea}
+                onChange={({target}) => setTextarea(target.value)}
+                rows="5">
+
+            </textarea>
+        </div>
 
 
     )

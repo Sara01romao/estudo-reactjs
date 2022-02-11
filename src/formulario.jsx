@@ -4,6 +4,8 @@ import {useState} from 'react'
 export default function Formulario(){
         const [nome, setNome] = useState('');
         const [textarea, setTextarea] = useState('');
+        const [select, setSelect] = useState('');
+
 
         function handleSubmit(event){
             event.preventDefault();
@@ -59,6 +61,14 @@ export default function Formulario(){
                 rows="5">
 
             </textarea>
+
+            <h3>Select</h3>
+
+            <select name={select} id="fruta" onChange={({target}) => setSelect(target.value)}>
+                <option disabled value="">Estado</option>
+                <option value="uva">Uva</option>
+                <option value="jaca">Jacá</option>
+            </select>
         </div>
 
 

@@ -5,8 +5,9 @@ export default function Formulario(){
         const [nome, setNome] = useState('');
         const [textarea, setTextarea] = useState('');
         const [select, setSelect] = useState('');
+        const [radio, setRadio] = useState('');
 
-
+        
         function handleSubmit(event){
             event.preventDefault();
 
@@ -22,6 +23,13 @@ export default function Formulario(){
             const {id, value} = target;
             setForm({...form, [id]: value});
 ;        }
+
+
+
+    //radio
+    function handleChangeRadio({target}){
+        setRadio(target.value)
+    }
 
 
     return(
@@ -69,6 +77,28 @@ export default function Formulario(){
                 <option value="uva">Uva</option>
                 <option value="jaca">Jacá</option>
             </select>
+
+
+            <h3>Radio Button</h3>
+            <label htmlFor="">
+
+                Café
+                <input type='radio' onChange={handleChangeRadio} name="bebida" value="cafe"/>
+            </label>
+
+            <label htmlFor="">
+
+               Chá
+                <input type='radio' onChange={handleChangeRadio} name="bebida" value="cha"/>
+            </label>
+
+            {/* ou */}
+            <label htmlFor="">
+
+                refri
+                <input type='radio' onChange={handleChangeRadio} checked={radio === 'refri'} value="refri"/>
+             </label>
+            {radio}
         </div>
 
 

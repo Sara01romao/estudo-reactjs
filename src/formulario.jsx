@@ -6,6 +6,8 @@ export default function Formulario(){
         const [textarea, setTextarea] = useState('');
         const [select, setSelect] = useState('');
         const [radio, setRadio] = useState('');
+        const [check, setCheck] = useState(false); //checkbox sozinho
+        const [checkCores, setCheckCores] = useState([]); //checkbox multiplos
 
         
         function handleSubmit(event){
@@ -30,6 +32,19 @@ export default function Formulario(){
     function handleChangeRadio({target}){
         setRadio(target.value)
     }
+
+    //checkbox multiplo
+    function handleCheck({target}){
+        if(target.checked){
+            setCheckCores([...checkCores, target.value]);
+        }else {
+            setCheckCores(checkCores.filter((cor) => cor !== target.value))
+        }
+        
+        console.log(checkCores)
+
+    }
+
 
 
     return(
@@ -99,6 +114,30 @@ export default function Formulario(){
                 <input type='radio' onChange={handleChangeRadio} checked={radio === 'refri'} value="refri"/>
              </label>
             {radio}
+
+
+            <h3>Checkbox</h3>
+            <label htmlFor="">
+                Li os Termos
+                <input type="checkbox" name="" id="" value={check} checked={check} onChange={({target}) => setCheck(target.checked)} />
+            </label>
+
+
+            <h3>Multiplos Checkbox</h3>
+            <form action="">
+                <label htmlFor="">
+                   azul
+                    <input type="checkbox" name="" id="" value="azul" checked={checkCores.includes('azul')} onChange={handleCheck} />
+                </label>
+
+                <label htmlFor="">
+                   vermelho
+                    <input type="checkbox" name="" id="" value="vermelho" checked={checkCores.includes('vermelho')} onChange={handleCheck} />
+                </label>
+
+               
+            </form>
+
         </div>
 
 

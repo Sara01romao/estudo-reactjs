@@ -1,11 +1,18 @@
 
 //...props repassa todos as propriedades restante, o ideal que seja igual entre os inputs
 
-const Input = ({id, label, value, setValue, ...props}) =>{
+const Input = ({id, label, value, onChange, ...props}) =>{
     return(
         <>
             <label htmlFor={id}>{label}</label>
-            <input type="text" id={id} name={id} value={value} onChange={({target}) => setValue(target.value)} {...props}/>
+            <input 
+                type="text" 
+                id={id} 
+                name={id}
+                value={value} 
+                onChange={onChange} 
+                {...props}
+            />
 
         </>
     )

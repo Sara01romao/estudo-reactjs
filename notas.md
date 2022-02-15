@@ -18,11 +18,14 @@ CRIAR HOOK:
  Deve começar com a palabra 'use'
 
 
- REGRAS:
+REGRAS:
 Não utilize os hooks dentro de funções, loops ou condicionais
 Utilizar só em componentes e custom hooks
 
-/*****************************************************************************************/
+/
+
+*****************************************************************************************/
 
 
-
+INPUT :
+ onbluer - usado para fazer validação 

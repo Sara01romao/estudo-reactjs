@@ -31,3 +31,14 @@ INPUT :
  onbluer - usado para fazer validação 
 
 useForm- podemos definir um custom hook para o formulario
+
+*****************************************************************************************/
+
+CSS
+css import -nomear classes inciando com o mome do componente ex: headerH1
+
+css modular - defina o nome do arquivo com a palavra .module ex: './Produto.module.css'; Então é criado um objeto com as classes css como propriedade.
+
+css styleComponent - mistura de css com js tudo é component. 
+
+css Framework - bootstrap. 

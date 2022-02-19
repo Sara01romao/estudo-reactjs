@@ -42,3 +42,9 @@ css modular - defina o nome do arquivo com a palavra .module ex: './Produto.modu
 css styleComponent - mistura de css com js tudo é component. 
 
 css Framework - bootstrap. 
+
+*****************************************************************************************/
+
+IMGS
+
+importa elas

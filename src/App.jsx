@@ -14,6 +14,7 @@ import Sobre from './sobre';
 import Header from './header';
 import Footer from './footer';
 import NaoEncontrada from './erro';
+import Login from './Login';
 
 //BrowserRouter- envolve doto app relacionado a rotas
 //  Routes- envolve rotas especificas
@@ -30,6 +31,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="sobre" element={<Sobre/>}/>
+        <Route path='login' element={<Login/>} />
         <Route path="*" element={<NaoEncontrada/>}/>
       </Routes>
       <Footer/>

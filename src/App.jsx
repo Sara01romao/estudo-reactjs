@@ -1,24 +1,9 @@
-
-
-
-import './App.css';
-
-
-
-
-
-
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import Home from './home';
-import Sobre from './sobre';
-import Header from './header';
-import Footer from './footer';
-import NaoEncontrada from './erro';
-import Login from './Login';
-
-//BrowserRouter- envolve doto app relacionado a rotas
-//  Routes- envolve rotas especificas
-//route - oassta o caminho
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Header from "./Components/Header";
+import Produtos from "./Components/Produtos";
+import './App.css'
+import Contato from "./Components/Contato";
+import Item from "./Components/Item";
 
 
 function App() {
@@ -26,17 +11,22 @@ function App() {
   
 
   return (
-    <BrowserRouter>
+    <div className="App">
+     <BrowserRouter>
       <Header/>
-      <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="sobre" element={<Sobre/>}/>
-        <Route path='login' element={<Login/>} />
-        <Route path="*" element={<NaoEncontrada/>}/>
-      </Routes>
-      <Footer/>
-    </BrowserRouter>
+
+      <div className="content">
+          <Routes>
+            <Route path="/" element={<Produtos/>}/>
+            <Route path="contato" element={<Contato/>}/>
+            <Route path="produto/:id" element={<Item/>}/>
+          </Routes>
+      </div>
       
+     
+     </BrowserRouter>
+   
+    </div>
       
   );
 }

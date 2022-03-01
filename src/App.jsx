@@ -1,31 +1,32 @@
 
+import React, { useState } from 'react';
 import './App.css'
-import Button from './Button';
-import PropTypes from 'prop-types'
+/* import Contato from './contato'; */
 
-//propType - define o tipo das propriedades que devem ser usada
+
+//Lazy  - usando para carregar o obj, returno uma funcção de callback com uma promessa do import
+//usado quando algo especifico tem que ser carregado
+
+const Contato = React.lazy(() => import('./Contato'));
+
 function App() {
 
-  
+  const [ativo, setAtivo] = useState(false);
 
   return (
     <div className="App">
-      
-      <Button width={200}  >Clique aqui</Button>
+      {ativo && (
+       <React.Suspense fallback={<div>Carregando...</div>}>
+          <Contato/>
+       </React.Suspense>
+      )}
+
+      <button onClick={() => setAtivo(true)}>Ativar</button>
+       
     </div>
       
   );
 }
 
-//valor padrao 
-Button.defaultProps = {
-  margin:'10px',
-}
-
-//valor conferido
-Button.PropTypes={
-  with: PropTypes.number.isRequired,
-
-}
 
 export default App;

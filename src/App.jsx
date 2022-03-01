@@ -1,34 +1,31 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Header from "./Components/Header";
-import Produtos from "./Components/Produtos";
+
 import './App.css'
-import Contato from "./Components/Contato";
-import Item from "./Components/Item";
+import Button from './Button';
+import PropTypes from 'prop-types'
 
-
+//propType - define o tipo das propriedades que devem ser usada
 function App() {
 
   
 
   return (
     <div className="App">
-     <BrowserRouter>
-      <Header/>
-
-      <div className="content">
-          <Routes>
-            <Route path="/" element={<Produtos/>}/>
-            <Route path="contato" element={<Contato/>}/>
-            <Route path="produto/:id" element={<Item/>}/>
-          </Routes>
-      </div>
       
-     
-     </BrowserRouter>
-   
+      <Button width={200}  >Clique aqui</Button>
     </div>
       
   );
+}
+
+//valor padrao 
+Button.defaultProps = {
+  margin:'10px',
+}
+
+//valor conferido
+Button.PropTypes={
+  with: PropTypes.number.isRequired,
+
 }
 
 export default App;

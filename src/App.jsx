@@ -1,18 +1,44 @@
 
-import { useState } from 'react';
+import { useReducer, useState } from 'react';
 import './App.css'
-import Header from './Header';
 
-//MEMO- retorna um componente memorizado, evitando que o mesmo seja atualizado toda vez que o estado de
-// elemento pai mudar.Use apenas para elementos que não dependam de estados diferentes 
+//função redutora e estadado inicial
+//dispatch- função que vai mandar as ações para o reducer
+
+
+
+ function reducer(state, action){
+
+  switch(action){
+    case 'aumentar':
+      return state +1;
+    case 'diminuir':
+      return state -1;
+    default:
+      throw new Error("Erro action não existe")
+  }
+
+  /*if(action === 'aumentar'){
+    return state + 1;
+  }
+  if(action === 'diminuir'){
+    return state - 1 
+  } 
+
+  return new Error("Erro action não existe");*/
+}
+
 function App() {
-  const [contar, setContar] = useState(0);
-  
+  const [state, dispatch] = useReducer(reducer, 0);
+
+ 
 
   return (
     <div className="App">
-      <Header/>
-      <button onClick={() => setContar(contar+1)}>{contar}</button>
+    
+      <button onClick={() => dispatch('aumentar')}>+</button>
+      {state}
+      <button onClick={() => dispatch('diminuir')}>-</button>
       
     </div>
       
